@@ -10,8 +10,8 @@ from views import MainWSView, init_handler
 app = web.Application()
 
 # подключаем куки сессии (без шифрования) и шаблонизатор
-session_setup(app, SimpleCookieStorage(cookie_name = "AIOHTTP_SESSION"))
-template_setup(app, loader = FileSystemLoader('static/'))
+session_setup(app, SimpleCookieStorage(cookie_name="AIOHTTP_SESSION"))
+template_setup(app, loader=FileSystemLoader('static/'))
 
 # Вместо базы данных будем использовать
 # 2-а больших кеширующих объекта, в
@@ -23,9 +23,9 @@ setattr(app, 'games', Games())
 # первый маршрут загружает index и js + создает сессии
 # второй обрабатывает websocket сообщения
 app.add_routes([
-  web.get('/', init_handler, name = 'index'),
-  web.get('/ws', MainWSView, name = 'ws'),
-  web.static('/static', 'static')
+    web.get('/', init_handler, name='index'),
+    web.get('/ws', MainWSView, name='ws'),
+    web.static('/static', 'static')
 ])
 
-web.run_app(app, port = 3560)
+web.run_app(app, port=3560)
