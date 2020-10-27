@@ -8,7 +8,7 @@ brotlipy==0.7.0
 cchardet==2.1.6
 cffi==1.14.0
 chardet==3.0.4
-cryptography==2.9
+cryptography==3.2
 idna==2.9
 idna-ssl==1.1.0
 Jinja2==2.11.1
